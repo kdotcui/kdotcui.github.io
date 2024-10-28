@@ -23,7 +23,7 @@ const greeting = {
   username: "Kevin Cui",
   title: "Hi, I'm Kevin",
   subTitle: emoji(
-    "A CS Major of Brandeis 2026. Full Stack Software Developer 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / Nodejs / React Native and some other cool libraries and frameworks."
+    "3rd Year @ Brandeis Studying CS & Math. Aspiring SWE 🚀 having an experience of building Web and Mobile applications with JavaScript / React / Nodejs / Swift and other libraries and frameworks."
   ),
   resumeLink:
     "https://drive.google.com/file/d/1ofFdKF_mqscH8WvXkSObnVvC9kK7Ldlu/view?usp=sharing", // Set to empty to hide the button
@@ -51,13 +51,13 @@ const skillsSection = {
   title: "What I do",
   subTitle: "CRAZY FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK",
   skills: [
-    emoji(
-      "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications"
-    ),
-    emoji("⚡ Progressive Web Applications ( PWA ) in normal and SPA Stacks"),
-    emoji(
-      "⚡ Integration of third party services such as Firebase/ AWS / Digital Ocean"
-    )
+    // emoji(
+    //   "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications"
+    // ),
+    // emoji("⚡ Progressive Web Applications ( PWA ) in normal and SPA Stacks"),
+    // emoji(
+    //   "⚡ Integration of third party services such as Firebase/ AWS / Digital Ocean"
+    // )
   ],
 
   /* Make Sure to include correct Font Awesome Classname to view your icon
@@ -205,7 +205,7 @@ const bigProjects = {
   projects: [
     {
       image: require("./assets/images/unirouteLogo.png"),
-      projectName: "UniRoute",
+      projectName: "UniRoute | Swift, MapKit, GoogleMapsAPI",
       projectDesc: "Developed an app unifying university and public transport schedules for a streamlined college student experience.",
       footerLink: [
         {
@@ -216,13 +216,24 @@ const bigProjects = {
       ]
     },
     {
-      image: require("./assets/images/nextuLogo.webp"),
-      projectName: "Nextu",
-      projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      image: require("./assets/images/betterthanshermLogo.ico"),
+      projectName: "Better Than Sherm | React, Azure, CosmosDB, Docker, Express",
+      projectDesc: "Empowered 50+ users to discover and share recipes through a seamless, cloud-integrated database",
       footerLink: [
         {
           name: "Visit Website",
-          url: "http://nextu.se/"
+          url: "https://github.com/kdotcui/betterthansherm"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/lostfoundLogo.png"),
+      projectName: "Lost & Found App | MERN Stack, Google Maps API",
+      projectDesc: "Developed a map-based platform using Google Maps API and React, attracting over 30 users with intuitive navigation and real- time updates.",
+      footerLink: [
+        {
+          name: "Visit Website",
+          url: "https://github.com/kdotcui/betterthansherm"
         }
       ]
     }
@@ -360,8 +371,8 @@ const contactInfo = {
   title: emoji("Contact Me ☎️"),
   subtitle:
     "Discuss a project or just want to say hi? My Inbox is open for all.",
-  number: "+92-0000000000",
-  email_address: "saadpasta70@gmail.com"
+  number: "857-408-8979",
+  email_address: "kevincui221@gmail.com"
 };
 
 // Twitter Section
