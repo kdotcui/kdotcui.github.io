@@ -49,7 +49,7 @@ const socialMediaLinks = {
 
 const skillsSection = {
   title: "What I do",
-  subTitle: "Full time Student at Brandeis looking for Internship/Co-op opportunities",
+  subTitle: "Develop accessible solutions that make a real difference in people's lives",
   skills: [
     // emoji(
     //   "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications"
@@ -139,7 +139,7 @@ const educationInfo = {
 // Your top 3 proficient stacks/tech experience
 
 const techStack = {
-  viewSkillBars: true, //Set it to true to show Proficiency Section
+  viewSkillBars: false, //Set it to true to show Proficiency Section
   experience: [
     {
       Stack: "Frontend/Design", //Insert stack or technology you have experience in
