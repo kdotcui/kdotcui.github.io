@@ -49,7 +49,7 @@ const socialMediaLinks = {
 
 const skillsSection = {
   title: "What I do",
-  subTitle: "CRAZY FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK",
+  subTitle: "Full time Student at Brandeis looking for Internship/Co-op opportunities",
   skills: [
     // emoji(
     //   "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications"
@@ -130,7 +130,7 @@ const educationInfo = {
       logo: require("./assets/images/brandeisLogo.png"),
       subHeader: "Bachelor of Science in Computer Science",
       duration: "August 2022 - May 2026",
-      desc: "GPA: 3.88. Took courses about Data Structures & Algorithms, Algorithms II, Operating Systems, Software Engineering, Numerical Methods and Data Analysis, Multivariable Calculus, Linear Algebra",
+      desc: "GPA: 3.9. Took courses about Data Structures & Algorithms, Algorithms II, Operating Systems, Software Engineering, Numerical Methods and Data Analysis, Multivariable Calculus, Linear Algebra",
       descBullets: ["Presidential Scholarship Award", "3x Dean's List"]
     },
   ]

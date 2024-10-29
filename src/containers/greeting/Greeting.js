@@ -41,7 +41,7 @@ export default function Greeting() {
               <div className="button-greeting-div">
                 <Button text="Contact me" href="#contact" />
                 <a
-                  href="https://drive.google.com/file/d/1WlQMfH73CVLtjaeXeCuWnKd4neefCGBN/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1j80yie13iYMxwEZlrImQHM6yJAxak3td/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="download-link-button"
