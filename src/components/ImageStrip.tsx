@@ -1,14 +1,14 @@
-import Image from "next/image";
-import type { ProjectImage } from "@/content/projects";
+import type { ProjectMedia } from "@/content/projects";
+import { ProjectCarouselCard } from "./ProjectCarouselCard";
 
 type ImageStripProps = {
-  images: ProjectImage[];
+  media: ProjectMedia[];
   title: string;
   priorityFirstImage?: boolean;
 };
 
 export function ImageStrip({
-  images,
+  media,
   title,
   priorityFirstImage = false,
 }: ImageStripProps) {
@@ -16,25 +16,25 @@ export function ImageStrip({
     <div
       className="image-strip"
       role="region"
-      aria-label={`Scrollable image gallery for ${title}`}
+      aria-label={`Scrollable project media for ${title}`}
     >
       <div className="image-strip__track" tabIndex={0}>
-        {images.map((image, imageIndex) => (
-          <figure key={image.src} className="image-strip__frame">
-            <Image
-              src={image.src}
-              alt={image.alt}
-              width={image.width}
-              height={image.height}
-              className="image-strip__img"
-              sizes="(max-width: 900px) 85vw, 42vw"
-              {...(priorityFirstImage && imageIndex === 0
-                ? { priority: true }
-                : {})}
-            />
-          </figure>
+        {media.map((item, mediaIndex) => (
+          <ProjectCarouselCard
+            key={getProjectMediaKey(item)}
+            media={item}
+            priority={priorityFirstImage && mediaIndex === 0}
+          />
         ))}
       </div>
     </div>
   );
+}
+
+function getProjectMediaKey(media: ProjectMedia) {
+  if (media.type === "link") {
+    return media.href;
+  }
+
+  return media.src;
 }

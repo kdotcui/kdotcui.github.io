@@ -276,19 +276,91 @@ a {
   border-radius: 3px;
 }
 
-.image-strip__frame {
+.project-carousel-card {
   margin: 0;
   flex: 0 0 auto;
   scroll-snap-align: start;
 }
 
-.image-strip__img {
+.project-carousel-card--fixed-width {
+  width: min(var(--project-card-width), 85vw);
+}
+
+.project-carousel-card--link:not(.project-carousel-card--fixed-width) {
+  width: min(24rem, 80vw);
+}
+
+.project-carousel-card__media {
   display: block;
   height: clamp(14rem, 52vh, 28rem);
   width: auto;
   max-width: none;
   object-fit: contain;
   background: var(--image-bg);
+}
+
+.project-carousel-card--fixed-width .project-carousel-card__media {
+  width: 100%;
+}
+
+.project-carousel-card__video {
+  object-fit: cover;
+}
+
+.project-carousel-card__caption {
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.project-carousel-card__link {
+  display: flex;
+  min-height: clamp(14rem, 52vh, 28rem);
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--image-bg);
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-carousel-card__link:hover {
+  opacity: 0.82;
+}
+
+.project-carousel-card__link-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 60%;
+  object-fit: cover;
+}
+
+.project-carousel-card__link-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.project-carousel-card__link-eyebrow,
+.project-carousel-card__link-url {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  overflow-wrap: anywhere;
+}
+
+.project-carousel-card__link-title {
+  font-size: 1.25rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.project-carousel-card__link-description {
+  color: var(--fg);
+  font-size: 0.9375rem;
+  line-height: 1.4;
 }
 
 @media (max-width: 360px) {
@@ -315,8 +387,12 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .image-strip__img {
+  .project-carousel-card__media {
     height: clamp(12rem, 40vh, 20rem);
+  }
+
+  .project-carousel-card__link {
+    min-height: clamp(12rem, 40vh, 20rem);
   }
 }
 

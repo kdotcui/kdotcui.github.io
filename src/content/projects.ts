@@ -1,11 +1,47 @@
-export type ProjectImage = {
+export type ProjectMediaBase = {
+  cardWidth?: string;
+  caption?: string;
+};
+
+export type ProjectImage = ProjectMediaBase & {
+  type?: "image";
   src: string;
   alt: string;
   width: number;
   height: number;
 };
 
-export type ProjectLogo = ProjectImage;
+export type ProjectVideo = ProjectMediaBase & {
+  type: "video";
+  src: string;
+  title: string;
+  poster?: string;
+  width?: number;
+  height?: number;
+  controls?: boolean;
+  autoPlay?: boolean;
+  loop?: boolean;
+  muted?: boolean;
+  playsInline?: boolean;
+};
+
+export type ProjectLinkPreview = ProjectMediaBase & {
+  type: "link";
+  href: string;
+  title: string;
+  description?: string;
+  eyebrow?: string;
+  image?: ProjectImage;
+};
+
+export type ProjectMedia = ProjectImage | ProjectVideo | ProjectLinkPreview;
+
+export type ProjectLogo = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+};
 
 export type Project = {
   slug: string;
@@ -13,7 +49,7 @@ export type Project = {
   period: string;
   description: string;
   logo?: ProjectLogo;
-  images: ProjectImage[];
+  media: ProjectMedia[];
 };
 
 /** Replace images under /public/projects/<slug>/ or edit src paths here. */
@@ -30,7 +66,7 @@ export const projects: Project[] = [
       width: 420,
       height: 120,
     },
-    images: [
+    media: [
       {
         src: "/projects/project-one/01.svg",
         alt: "Wealth.com cover",
@@ -60,10 +96,10 @@ export const projects: Project[] = [
     logo: {
       src: "/logos/hubspot.png",
       alt: "HubSpot",
-      width: 1024,
-      height: 299,
+      width: 962,
+      height: 275,
     },
-    images: [
+    media: [
       {
         src: "/projects/project-two/01.svg",
         alt: "HubSpot CRM frame 1",
@@ -80,10 +116,10 @@ export const projects: Project[] = [
   },
   {
     slug: "archive",
-    title: "Archive",
-    period: "Ongoing",
-    description: "Smaller experiments and in-progress work.",
-    images: [
+    title: "Experiments",
+    period: "",
+    description: "Smaller experiments.",
+    media: [
       {
         src: "/projects/archive/01.svg",
         alt: "Archive — sample",

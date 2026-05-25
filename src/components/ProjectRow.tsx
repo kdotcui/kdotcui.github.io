@@ -29,12 +29,14 @@ export function ProjectRow({
               project.title
             )}
           </h2>
-          <p className="project-row__period">{project.period}</p>
+          {project.period ? (
+            <p className="project-row__period">{project.period}</p>
+          ) : null}
         </header>
         <p className="project-row__description">{project.description}</p>
       </div>
       <ImageStrip
-        images={project.images}
+        media={project.media}
         title={project.title}
         priorityFirstImage={priorityFirstImage}
       />
