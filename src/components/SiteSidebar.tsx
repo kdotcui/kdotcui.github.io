@@ -178,7 +178,7 @@ export function SiteSidebar() {
             ))}
           </nav>
           <nav
-            className="site-sidebar__nav site-sidebar__nav--sections"
+            className="site-sidebar__nav"
             aria-label="Sections"
           >
             {sectionLinks.map(({ label, href, icon }) => (
