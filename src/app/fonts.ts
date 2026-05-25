@@ -8,9 +8,19 @@ export const satoshi = localFont({
       style: "normal",
     },
     {
+      path: "./fonts/Satoshi-LightItalic.woff2",
+      weight: "300",
+      style: "italic",
+    },
+    {
       path: "./fonts/Satoshi-Regular.woff2",
       weight: "400",
       style: "normal",
+    },
+    {
+      path: "./fonts/Satoshi-Italic.woff2",
+      weight: "400",
+      style: "italic",
     },
     {
       path: "./fonts/Satoshi-Medium.woff2",
@@ -18,14 +28,29 @@ export const satoshi = localFont({
       style: "normal",
     },
     {
+      path: "./fonts/Satoshi-MediumItalic.woff2",
+      weight: "500",
+      style: "italic",
+    },
+    {
       path: "./fonts/Satoshi-Bold.woff2",
       weight: "700",
       style: "normal",
     },
     {
+      path: "./fonts/Satoshi-BoldItalic.woff2",
+      weight: "700",
+      style: "italic",
+    },
+    {
       path: "./fonts/Satoshi-Black.woff2",
       weight: "900",
       style: "normal",
+    },
+    {
+      path: "./fonts/Satoshi-BlackItalic.woff2",
+      weight: "900",
+      style: "italic",
     },
   ],
   variable: "--font-satoshi",

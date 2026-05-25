@@ -57,6 +57,8 @@ a {
   position: sticky;
   top: 0;
   align-self: start;
+  display: flex;
+  justify-content: center;
   height: 100vh;
   padding: var(--row-pad-y) var(--row-pad-x);
 }
@@ -92,18 +94,6 @@ a {
   font-size: 2.4rem;
   line-height: 1.4;
   text-transform: lowercase;
-}
-
-.site-sidebar__tagline-link {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 1.18em;
-  font-weight: 400;
-  letter-spacing: -0.04em;
-  color: #18454b;
-}
-
-.site-sidebar__tagline-link:hover {
-  opacity: 0.65;
 }
 
 .site-sidebar__nav-grid {
@@ -174,6 +164,18 @@ a {
   user-select: none;
 }
 
+.site-sidebar__bio {
+  margin: 0;
+  max-width: 28rem;
+  color: var(--fg);
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.45;
+  text-transform: lowercase;
+}
+
 .site-main {
   min-width: 0;
 }
@@ -229,6 +231,10 @@ a {
   margin: 0;
   color: var(--fg);
   white-space: nowrap;
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 500;
+  font-style: italic;
 }
 
 .project-row__description {

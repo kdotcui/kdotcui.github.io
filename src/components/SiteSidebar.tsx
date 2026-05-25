@@ -151,7 +151,6 @@ export function SiteSidebar() {
           is building @{" "}
           <a
             href={site.work.url}
-            className="site-sidebar__tagline-link"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -159,6 +158,7 @@ export function SiteSidebar() {
           </a>
           
         </p>
+        <p className="site-sidebar__bio">{site.bio}</p>
         <div className="site-sidebar__nav-grid">
           <nav className="site-sidebar__nav" aria-label="Contact and social">
             {socialLinks.map(({ label, href, icon, external }) => (
