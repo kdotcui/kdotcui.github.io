@@ -3,10 +3,11 @@ import type { ReactNode } from "react";
 import { site } from "@/content/site";
 import { ThemeToggle } from "./ThemeToggle";
 
-type SocialLink = {
+type NavLink = {
   label: string;
   href: string;
   icon: ReactNode;
+  external?: boolean;
 };
 
 function IconLinkedIn() {
@@ -57,10 +58,86 @@ function IconGitHub() {
   );
 }
 
-const socialLinks: SocialLink[] = [
-  { label: "linkedin", href: site.links.linkedin, icon: <IconLinkedIn /> },
-  { label: "instagram", href: site.links.instagram, icon: <IconInstagram /> },
-  { label: "github", href: site.links.github, icon: <IconGitHub /> },
+function IconFood() {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2" />
+      <path d="M7 2v20" />
+      <path d="M21 15V2" />
+      <path d="M21 15a5 5 0 0 1-5 5h-1a2 2 0 0 1-2-2v-7" />
+    </svg>
+  );
+}
+
+function IconMusic() {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <path d="M9 18V5l12-2v13" />
+      <circle cx="6" cy="18" r="3" />
+      <circle cx="18" cy="16" r="3" />
+    </svg>
+  );
+}
+
+function IconBlog() {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <path d="M12 20h9" />
+      <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z" />
+    </svg>
+  );
+}
+
+const socialLinks: NavLink[] = [
+  {
+    label: "linkedin",
+    href: site.links.linkedin,
+    icon: <IconLinkedIn />,
+    external: true,
+  },
+  {
+    label: "instagram",
+    href: site.links.instagram,
+    icon: <IconInstagram />,
+    external: true,
+  },
+  { label: "github", href: site.links.github, icon: <IconGitHub />, external: true },
+];
+
+const sectionLinks: NavLink[] = [
+  { label: "food", href: "/food", icon: <IconFood /> },
+  { label: "music", href: "/music", icon: <IconMusic /> },
+  { label: "blog", href: "/blog", icon: <IconBlog /> },
 ];
 
 export function SiteSidebar() {
@@ -71,7 +148,7 @@ export function SiteSidebar() {
           {site.name}
         </Link>
         <p className="site-sidebar__tagline">
-          building @{" "}
+          is building @{" "}
           <a
             href={site.work.url}
             className="site-sidebar__tagline-link"
@@ -82,23 +159,38 @@ export function SiteSidebar() {
           </a>
           
         </p>
-        <nav className="site-sidebar__nav" aria-label="Contact and social">
-          {socialLinks.map(({ label, href, icon }) => (
-            <a
-              key={label}
-              href={href}
-              className="site-sidebar__link"
-              {...(href.startsWith("http")
-                ? { target: "_blank", rel: "noopener noreferrer" }
-                : {})}
-            >
-              <span className="site-sidebar__link-icon" aria-hidden>
-                {icon}
-              </span>
-              {label}
-            </a>
-          ))}
-        </nav>
+        <div className="site-sidebar__nav-grid">
+          <nav className="site-sidebar__nav" aria-label="Contact and social">
+            {socialLinks.map(({ label, href, icon, external }) => (
+              <a
+                key={label}
+                href={href}
+                className="site-sidebar__link"
+                {...(external
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
+              >
+                <span className="site-sidebar__link-icon" aria-hidden>
+                  {icon}
+                </span>
+                {label}
+              </a>
+            ))}
+          </nav>
+          <nav
+            className="site-sidebar__nav site-sidebar__nav--sections"
+            aria-label="Sections"
+          >
+            {sectionLinks.map(({ label, href, icon }) => (
+              <Link key={label} href={href} className="site-sidebar__link">
+                <span className="site-sidebar__link-icon" aria-hidden>
+                  {icon}
+                </span>
+                {label}
+              </Link>
+            ))}
+          </nav>
+        </div>
         <ThemeToggle />
       </div>
     </aside>

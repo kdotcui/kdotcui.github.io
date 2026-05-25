@@ -5,12 +5,14 @@ export type ProjectImage = {
   height: number;
 };
 
+export type ProjectLogo = ProjectImage;
+
 export type Project = {
   slug: string;
   title: string;
   period: string;
-  tags: string[];
   description: string;
+  logo?: ProjectLogo;
   images: ProjectImage[];
 };
 
@@ -18,27 +20,32 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "project-one",
-    title: "Project One",
-    period: "Spring 2025",
-    tags: ["Identity", "Web"],
+    title: "Wealth.com",
+    period: "Ongoing",
     description:
-      "A short description of the work. Swap this copy and add your own images in public/projects/project-one/.",
+      "Building estate and wealth management tools during Wealth.com's growth from Series A to Series B, contributing across AI/LLM pipelines, and shipping out user product requests. Currently supporting over $15T in client assets!",
+    logo: {
+      src: "/logos/wealth.png",
+      alt: "Wealth.com",
+      width: 420,
+      height: 120,
+    },
     images: [
       {
         src: "/projects/project-one/01.svg",
-        alt: "Project One — cover",
+        alt: "Wealth.com cover",
         width: 900,
         height: 1200,
       },
       {
         src: "/projects/project-one/02.svg",
-        alt: "Project One — spread",
+        alt: "Wealth.com product spread",
         width: 1200,
         height: 900,
       },
       {
         src: "/projects/project-one/03.svg",
-        alt: "Project One — detail",
+        alt: "Wealth.com product detail",
         width: 900,
         height: 1200,
       },
@@ -46,21 +53,26 @@ export const projects: Project[] = [
   },
   {
     slug: "project-two",
-    title: "Project Two",
+    title: "HubSpot",
     period: "Summer 2025",
-    tags: ["Editorial", "Art Direction"],
     description:
-      "Another row on the homepage with a horizontal image strip, inspired by open portfolio layouts.",
+      "My first internship experience, working on core CRM record page features used by teams every day. I independently planned and shipped end-to-end record associations, a workflow used more than 10M times daily.",
+    logo: {
+      src: "/logos/hubspot.png",
+      alt: "HubSpot",
+      width: 1024,
+      height: 299,
+    },
     images: [
       {
         src: "/projects/project-two/01.svg",
-        alt: "Project Two — frame 1",
+        alt: "HubSpot CRM frame 1",
         width: 1400,
         height: 900,
       },
       {
         src: "/projects/project-two/02.svg",
-        alt: "Project Two — frame 2",
+        alt: "HubSpot CRM frame 2",
         width: 1400,
         height: 900,
       },
@@ -70,7 +82,6 @@ export const projects: Project[] = [
     slug: "archive",
     title: "Archive",
     period: "Ongoing",
-    tags: ["Mixed"],
     description: "Smaller experiments and in-progress work.",
     images: [
       {
