@@ -144,7 +144,7 @@ export function SiteSidebar() {
   return (
     <aside className="site-sidebar">
       <div className="site-sidebar__inner">
-        <Link href="/" className="site-sidebar__name">
+        <Link href="/me" className="site-sidebar__name">
           {site.name}
         </Link>
         <p className="site-sidebar__tagline">
