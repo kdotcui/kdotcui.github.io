@@ -21,11 +21,13 @@ export function TimelineVideoPage() {
   async function startExperience() {
     const video = videoRef.current;
 
-    if (!video || hasStarted) return;
+    if (!video || (hasStarted && !video.paused)) return;
 
-    video.currentTime = 0;
-    video.muted = false;
-    video.volume = 1;
+    if (!hasStarted) {
+      video.currentTime = 0;
+      video.muted = false;
+      video.volume = 1;
+    }
 
     try {
       await video.play();
@@ -39,6 +41,7 @@ export function TimelineVideoPage() {
     <main
       className={`timeline-page${hasStarted ? " is-started" : ""}`}
       aria-label="Timeline"
+      onClick={startExperience}
     >
       <video
         ref={videoRef}
@@ -59,7 +62,6 @@ export function TimelineVideoPage() {
       <button
         type="button"
         className="timeline-page__intro"
-        onClick={startExperience}
         aria-label="Welcome to keaven. Click to experience."
         aria-hidden={hasStarted}
         tabIndex={hasStarted ? -1 : 0}
