@@ -238,6 +238,29 @@ a {
   transform: translateY(0);
 }
 
+.timeline-page__me-link {
+  position: absolute;
+  top: clamp(1rem, 2vw, 1.5rem);
+  right: clamp(1rem, 2vw, 1.5rem);
+  z-index: 1;
+  display: inline-flex;
+  justify-content: flex-end;
+  color: #f6f1e8;
+  font-size: clamp(0.875rem, 1.2vw, 1rem);
+  font-weight: 500;
+  opacity: 0;
+  pointer-events: none;
+  text-align: right;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  transition: opacity 700ms ease;
+}
+
+.timeline-page__me-link.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .timeline-page__intro {
   position: absolute;
   inset: 0;

@@ -1,10 +1,22 @@
 "use client";
 
-import { useRef, useState } from "react";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
 export function TimelineVideoPage() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [hasStarted, setHasStarted] = useState(false);
+  const [showMeLink, setShowMeLink] = useState(false);
+
+  useEffect(() => {
+    if (!hasStarted) return;
+
+    const timeoutId = window.setTimeout(() => {
+      setShowMeLink(true);
+    }, 10000);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [hasStarted]);
 
   async function startExperience() {
     const video = videoRef.current;
@@ -38,6 +50,12 @@ export function TimelineVideoPage() {
         preload="auto"
       />
       <h1 className="timeline-page__title">ear + eye</h1>
+      <Link
+        href="/me"
+        className={`timeline-page__me-link${showMeLink ? " is-visible" : ""}`}
+      >
+        kevin→
+      </Link>
       <button
         type="button"
         className="timeline-page__intro"
