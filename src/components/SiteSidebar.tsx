@@ -137,7 +137,7 @@ const socialLinks: NavLink[] = [
 const sectionLinks: NavLink[] = [
   { label: "food", href: "/food", icon: <IconFood /> },
   { label: "music", href: "/music", icon: <IconMusic /> },
-  { label: "blog", href: "/blog", icon: <IconBlog /> },
+  { label: "timeline", href: "/timeline", icon: <IconBlog /> },
 ];
 
 export function SiteSidebar() {
