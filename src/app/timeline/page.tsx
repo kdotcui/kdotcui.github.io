@@ -1,5 +1,10 @@
-import { InTheMakingPage } from "@/components/InTheMakingPage";
+import type { Metadata } from "next";
+import { TimelineVideoPage } from "@/components/TimelineVideoPage";
+
+export const metadata: Metadata = {
+  title: "timeline",
+};
 
 export default function TimelinePage() {
-  return <InTheMakingPage pageName="timeline" />;
+  return <TimelineVideoPage />;
 }
