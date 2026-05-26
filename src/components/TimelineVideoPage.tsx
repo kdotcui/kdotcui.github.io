@@ -73,7 +73,6 @@ export function TimelineVideoPage() {
           <br />
           click to experience
         </p>
-        <p className="timeline-page__disclaimer">horizontal mode recommended</p>
       </button>
     </main>
   );

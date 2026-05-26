@@ -201,6 +201,35 @@ a {
   cursor: pointer;
 }
 
+@media (max-width: 500px) and (orientation: portrait) {
+  html:has(.timeline-page),
+  body:has(.timeline-page) {
+    overflow: hidden;
+  }
+
+  .timeline-page {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100vh;
+    height: 100vw;
+    min-height: unset;
+    margin-left: -50vh;
+    margin-top: -50vw;
+    transform: rotate(90deg);
+    transform-origin: center center;
+  }
+
+  @supports (width: 100dvh) {
+    .timeline-page {
+      width: 100dvh;
+      height: 100dvw;
+      margin-left: -50dvh;
+      margin-top: -50dvw;
+    }
+  }
+}
+
 .timeline-page__video {
   position: absolute;
   inset: 0;
@@ -291,19 +320,6 @@ a {
 .timeline-page__intro-copy {
   margin: 0;
   line-height: 1.7;
-}
-
-.timeline-page__disclaimer {
-  position: absolute;
-  right: 1rem;
-  bottom: 50%;
-  margin: 0;
-  color: #b0b0b0;
-  font-size: clamp(0.572rem, 0.792vw, 0.726rem);
-  letter-spacing: 0.02em;
-  text-transform: lowercase;
-  transform: translateY(50%) rotate(90deg);
-  transform-origin: center;
 }
 
 .timeline-page__star {
