@@ -4,8 +4,21 @@ import { satoshi } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
   title: site.name,
   description: site.description,
+  openGraph: {
+    title: site.name,
+    description: site.description,
+    url: site.url,
+    siteName: site.name,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.name,
+    description: site.description,
+  },
 };
 
 export default function RootLayout({

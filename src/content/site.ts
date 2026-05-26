@@ -1,5 +1,6 @@
 export const site = {
   name: "Kevin Cui",
+  url: "https://keaven.space",
   description: "engineering @ wealth.com",
   work: {
     company: "wealth.com",
