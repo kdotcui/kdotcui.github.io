@@ -317,9 +317,26 @@ a {
   pointer-events: none;
 }
 
+.timeline-page__intro-mark {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(0.45rem, 1vw, 0.75rem);
+}
+
 .timeline-page__intro-copy {
-  margin: 0;
-  line-height: 1.7;
+  font-size: clamp(0.792rem, 1.1vw, 1.045rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-transform: lowercase;
+}
+
+.timeline-page__intro-icon {
+  width: clamp(3.3rem, 6.05vw, 4.675rem);
+  height: auto;
+  object-fit: contain;
+  opacity: 0.62;
 }
 
 .timeline-page__star {
@@ -333,7 +350,7 @@ a {
 .timeline-page__star::after {
   position: absolute;
   content: "";
-  background: #111111;
+  background: currentColor;
 }
 
 .timeline-page__star::before {
@@ -348,6 +365,16 @@ a {
   width: 0.8rem;
   height: 1px;
   transform: translateY(-50%);
+}
+
+.timeline-page__star--top-left::after,
+.timeline-page__star--bottom-left::after {
+  right: 50%;
+}
+
+.timeline-page__star--top-right::after,
+.timeline-page__star--bottom-right::after {
+  left: 50%;
 }
 
 .timeline-page__star--top-left {

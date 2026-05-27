@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
@@ -70,11 +71,18 @@ export function TimelineVideoPage() {
         <span className="timeline-page__star timeline-page__star--top-right" />
         <span className="timeline-page__star timeline-page__star--bottom-left" />
         <span className="timeline-page__star timeline-page__star--bottom-right" />
-        <p className="timeline-page__intro-copy">
-          welcome to keaven.
-          <br />
-          click to experience
-        </p>
+        <span className="timeline-page__intro-mark" aria-hidden="true">
+          <span className="timeline-page__intro-copy">welcome to keaven.</span>
+          <Image
+            className="timeline-page__intro-icon"
+            src="/icon.svg"
+            alt=""
+            width={96}
+            height={96}
+            decoding="async"
+          />
+          <span className="timeline-page__intro-copy">click to experience</span>
+        </span>
       </button>
     </main>
   );
