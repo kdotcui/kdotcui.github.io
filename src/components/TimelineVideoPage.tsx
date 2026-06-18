@@ -14,7 +14,7 @@ export function TimelineVideoPage() {
 
     const timeoutId = window.setTimeout(() => {
       setShowMeLink(true);
-    }, 10000);
+    }, 60000);
 
     return () => window.clearTimeout(timeoutId);
   }, [hasStarted]);
