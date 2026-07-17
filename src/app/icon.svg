@@ -1,21 +1,53 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
   <defs>
     <path id="minimalPetal"
-          d="M 200,200 C 140,140 160,40 200,20 C 240,40 260,140 200,200 Z"
+          d="M 200,200 C 145,126 160,40 200,20 C 240,40 255,126 200,200 Z"
           fill="#ffffff"
           stroke="#000000"
           stroke-width="6"
           stroke-linejoin="round"/>
+
+    <!-- 60° wedge per petal (±30° from axis); R=250 reaches past viewBox edge -->
+    <clipPath id="clip-petal-0" clipPathUnits="userSpaceOnUse">
+      <path d="M 200 200 L 75 -16.5 L 325 -16.5 Z"/>
+    </clipPath>
+    <clipPath id="clip-petal-1" clipPathUnits="userSpaceOnUse">
+      <path d="M 200 200 L 75 -16.5 L 325 -16.5 Z" transform="rotate(60 200 200)"/>
+    </clipPath>
+    <clipPath id="clip-petal-2" clipPathUnits="userSpaceOnUse">
+      <path d="M 200 200 L 75 -16.5 L 325 -16.5 Z" transform="rotate(120 200 200)"/>
+    </clipPath>
+    <clipPath id="clip-petal-3" clipPathUnits="userSpaceOnUse">
+      <path d="M 200 200 L 75 -16.5 L 325 -16.5 Z" transform="rotate(180 200 200)"/>
+    </clipPath>
+    <clipPath id="clip-petal-4" clipPathUnits="userSpaceOnUse">
+      <path d="M 200 200 L 75 -16.5 L 325 -16.5 Z" transform="rotate(240 200 200)"/>
+    </clipPath>
+    <clipPath id="clip-petal-5" clipPathUnits="userSpaceOnUse">
+      <path d="M 200 200 L 75 -16.5 L 325 -16.5 Z" transform="rotate(300 200 200)"/>
+    </clipPath>
   </defs>
 
   <rect width="400" height="400" fill="#ffffff" />
 
-  <use href="#minimalPetal" transform="rotate(0 200 200)" />
-  <use href="#minimalPetal" transform="rotate(60 200 200)" />
-  <use href="#minimalPetal" transform="rotate(120 200 200)" />
-  <use href="#minimalPetal" transform="rotate(180 200 200)" />
-  <use href="#minimalPetal" transform="rotate(240 200 200)" />
-  <use href="#minimalPetal" transform="rotate(300 200 200)" />
+  <g clip-path="url(#clip-petal-0)">
+    <use href="#minimalPetal" transform="rotate(0 200 200)" />
+  </g>
+  <g clip-path="url(#clip-petal-1)">
+    <use href="#minimalPetal" transform="rotate(60 200 200)" />
+  </g>
+  <g clip-path="url(#clip-petal-2)">
+    <use href="#minimalPetal" transform="rotate(120 200 200)" />
+  </g>
+  <g clip-path="url(#clip-petal-3)">
+    <use href="#minimalPetal" transform="rotate(180 200 200)" />
+  </g>
+  <g clip-path="url(#clip-petal-4)">
+    <use href="#minimalPetal" transform="rotate(240 200 200)" />
+  </g>
+  <g clip-path="url(#clip-petal-5)">
+    <use href="#minimalPetal" transform="rotate(300 200 200)" />
+  </g>
 
   <g stroke="#000000" stroke-width="6" fill="none">
     <circle cx="200" cy="200" r="180" />
