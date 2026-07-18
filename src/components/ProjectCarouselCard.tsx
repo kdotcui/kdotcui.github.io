@@ -57,6 +57,22 @@ function renderProjectMedia(media: ProjectMedia, priority: boolean) {
     );
   }
 
+  if (media.type === "iframe") {
+    return (
+      <iframe
+        className="project-carousel-card__media project-carousel-card__iframe"
+        src={media.src}
+        title={media.title}
+        width={media.width}
+        height={media.height}
+        loading="lazy"
+        frameBorder={0}
+        allowFullScreen={media.allowFullScreen}
+        style={{ aspectRatio: `${media.width} / ${media.height}` }}
+      />
+    );
+  }
+
   if (media.type === "link") {
     return (
       <a

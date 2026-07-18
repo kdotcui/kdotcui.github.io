@@ -34,7 +34,20 @@ export type ProjectLinkPreview = ProjectMediaBase & {
   image?: ProjectImage;
 };
 
-export type ProjectMedia = ProjectImage | ProjectVideo | ProjectLinkPreview;
+export type ProjectIframe = ProjectMediaBase & {
+  type: "iframe";
+  src: string;
+  title: string;
+  width: number;
+  height: number;
+  allowFullScreen?: boolean;
+};
+
+export type ProjectMedia =
+  | ProjectImage
+  | ProjectVideo
+  | ProjectLinkPreview
+  | ProjectIframe;
 
 export type ProjectLogo = {
   src: string;
@@ -68,22 +81,12 @@ export const projects: Project[] = [
     },
     media: [
       {
-        src: "/projects/project-one/01.svg",
-        alt: "Wealth.com cover",
-        width: 900,
-        height: 1200,
-      },
-      {
-        src: "/projects/project-one/02.svg",
-        alt: "Wealth.com product spread",
-        width: 1200,
-        height: 900,
-      },
-      {
-        src: "/projects/project-one/03.svg",
-        alt: "Wealth.com product detail",
-        width: 900,
-        height: 1200,
+        type: "iframe",
+        src: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7483180730592927744?collapsed=1",
+        title: "Embedded post",
+        width: 504,
+        height: 589,
+        allowFullScreen: true,
       },
     ],
   },
@@ -92,7 +95,7 @@ export const projects: Project[] = [
     title: "HubSpot",
     period: "Summer 2025",
     description:
-      "My first internship experience, working on core CRM record page features used by teams every day. I independently planned and shipped end-to-end record associations, a workflow used more than 10M times daily.",
+      "My first internship experience, working on core CRM record page features used by teams every day. I independently planned and shipped end-to-end record associations, a workflow used more than 10M times daily. (gifs ripped off hubspot.com but that was one of the features i had full ownership of)",
     logo: {
       src: "/logos/hubspot.png",
       alt: "HubSpot",
@@ -101,16 +104,16 @@ export const projects: Project[] = [
     },
     media: [
       {
-        src: "/projects/project-two/01.svg",
-        alt: "HubSpot CRM frame 1",
-        width: 1400,
-        height: 900,
+        src: "/projects/project-two/create-associations-record-page.gif",
+        alt: "Create associations record page",
+        width: 684,
+        height: 824,
       },
       {
-        src: "/projects/project-two/02.svg",
-        alt: "HubSpot CRM frame 2",
-        width: 1400,
-        height: 900,
+        src: "/projects/project-two/record-customization-association-card.gif",
+        alt: "Record customization association card",
+        width: 300,
+        height: 640,
       },
     ],
   },

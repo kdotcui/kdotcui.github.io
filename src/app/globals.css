@@ -520,6 +520,11 @@ a {
   object-fit: cover;
 }
 
+.project-carousel-card__iframe {
+  border: 0;
+  object-fit: unset;
+}
+
 .project-carousel-card__caption {
   margin-top: 0.5rem;
   color: var(--muted);
